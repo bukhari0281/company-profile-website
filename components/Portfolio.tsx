@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -11,7 +12,7 @@ export default function Portfolio() {
       title: 'Toko Online Fashion Lokal',
       category: 'ecommerce',
       description: 'Platform e-commerce modern untuk butik fashion dengan katalog produk lengkap',
-      image: '🛍️',
+      image: '/placeholder-1.png', // Placeholder image path
       tags: ['E-Commerce', 'Responsive', 'SEO'],
     },
     {
@@ -19,7 +20,7 @@ export default function Portfolio() {
       title: 'Website Kafe Specialty Coffee',
       category: 'corporate',
       description: 'Website cafe dengan menu digital, reservasi online, dan blog artikel',
-      image: '☕',
+      image: '/placeholder-2.png', // Placeholder image path
       tags: ['Corporate', 'Blog', 'Reservasi'],
     },
     {
@@ -27,7 +28,7 @@ export default function Portfolio() {
       title: 'Portal Pendaftaran Seminar',
       category: 'corporate',
       description: 'Portal pendaftaran online dengan sistem tiket dan email konfirmasi otomatis',
-      image: '🎓',
+      image: '/placeholder-3.png', // Placeholder image path
       tags: ['Corporate', 'Automation'],
     },
     {
@@ -35,7 +36,7 @@ export default function Portfolio() {
       title: 'Marketplace Produk Lokal',
       category: 'ecommerce',
       description: 'Platform marketplace untuk seller lokal dengan sistem rating dan review',
-      image: '🏪',
+      image: '/placeholder-4.png', // Placeholder image path
       tags: ['E-Commerce', 'Marketplace'],
     },
     {
@@ -43,7 +44,7 @@ export default function Portfolio() {
       title: 'Website Agency Digital Marketing',
       category: 'corporate',
       description: 'Website agency profesional dengan portfolio, case studies, dan contact form',
-      image: '🎯',
+      image: '/placeholder-5.png', // Placeholder image path
       tags: ['Corporate', 'Portfolio'],
     },
     {
@@ -51,7 +52,7 @@ export default function Portfolio() {
       title: 'Toko Online Produk Handmade',
       category: 'ecommerce',
       description: 'E-commerce untuk penjual handmade dengan sistem pembayaran terintegrasi',
-      image: '🎨',
+      image: '/placeholder-6.png', // Placeholder image path
       tags: ['E-Commerce', 'Payment Gateway'],
     },
   ];
@@ -105,8 +106,14 @@ export default function Portfolio() {
               className="group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white border border-gray-100"
             >
               {/* Image */}
-              <div className="relative h-48 bg-gradient-to-br from-[#0A2463] to-blue-600 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                <div className="text-6xl">{project.image}</div>
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src={`https://via.placeholder.com/400x300.png?text=${encodeURIComponent(project.title)}`}
+                  alt={`Contoh gambar untuk proyek ${project.title}`}
+                  layout="fill"
+                  objectFit="cover"
+                  className="group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
               {/* Content */}
