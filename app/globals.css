@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design Tokens untuk WebPro Batam */
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary: 221 77.1% 15.5%;
+    --primary-light: 221 50% 30%;
+    --primary-dark: 221 85% 10%;
+    
+    /* Neutrals */
+    --neutral-light: 0 0% 94.9%;
+    --neutral-medium: 0 0% 95.3%;
+    --white: 0 0% 100%;
+    
+    /* Semantic Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    
+    /* UI Elements */
+    --border: 0 0% 89.8%;
+    --input: 0 0% 95%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 221 77.1% 15.5%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Spacing & Border Radius */
+    --radius: 0.375rem;
+  }
+}
+
+/* Base Styling */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-white text-slate-900 font-sans;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+    font-weight: 700;
+  }
+  
+  /* Smooth Scroll Behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Container Utilities */
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Text Utilities */
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#0A2463] to-[#0A2463] bg-clip-text text-transparent;
+  }
+  
+  /* Button Base Styles */
+  .btn-base {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-block;
+  }
+  
+  .btn-primary {
+    @apply btn-base bg-[#0A2463] text-white hover:bg-blue-900 hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply btn-base border-2 border-[#0A2463] text-[#0A2463] hover:bg-[#0A2463] hover:text-white;
+  }
+  
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
