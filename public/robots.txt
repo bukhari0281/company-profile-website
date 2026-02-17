@@ -5,4 +5,4 @@ Allow: /
 Disallow: /_next/
 Disallow: /api/
 
-Sitemap: https://www.webatam.my.id/sitemap.xml
+Sitemap: https://webatam.my.id/sitemap.xml
