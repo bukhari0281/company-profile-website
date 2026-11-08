@@ -931,6 +931,14 @@ a:hover {
 
 /* ========== ANIMATION & TRANSITIONS ========== */
 
+/* Hardware GPU Acceleration for Smooth Animations */
+.service-card,
+.portfolio-item,
+.testimonial-card,
+.animate-on-scroll {
+    will-change: transform, opacity;
+}
+
 /* Fade In Animation */
 @keyframes fadeIn {
     from {
@@ -964,5 +972,18 @@ a:hover {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+
+/* ========== ACCESSIBILITY & PERFORMANCE (PREFERS REDUCED MOTION) ========== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
